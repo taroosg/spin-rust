@@ -1,0 +1,17 @@
+authors = ["taroosg <root@taroosg.dev>"]
+description = "First app."
+name = "spin-rust"
+spin_manifest_version = "1"
+trigger = {type = "http", base = "/"}
+version = "0.1.0"
+
+[[component]]
+allowed_http_hosts = []
+environment = {PET = "CAT", FOOD = "WATERMELON"}
+id = "spin-rust"
+source = "target/wasm32-wasi/release/spin_rust.wasm"
+[component.trigger]
+route = "/..."
+
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
