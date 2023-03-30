@@ -23,6 +23,7 @@ fn handle_spin_rust(req: Request) -> Result<Response> {
     let json = json!({
         "input": result,
         "result": list,
+        "message": "☕",
     });
 
     let response = format!("{}", json);
